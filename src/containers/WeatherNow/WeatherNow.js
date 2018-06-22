@@ -6,7 +6,6 @@ class WeatherNow extends Component {
     render () {
         return (
             <Aux>
-                <div>WeatherNow Cool Graphic</div>
                 <div>The Current Weather...</div>
             </Aux>
 
