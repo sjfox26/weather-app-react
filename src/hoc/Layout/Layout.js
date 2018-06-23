@@ -8,7 +8,7 @@ class Layout extends Component {
         return (
             <Aux>
                 <div>Toolbar, SideDrawer, Backdrop</div>
-                <div className={classes.Graphic}>Cool Graphic</div>
+                <div className={classes.Graphic}>Cool Weather Graphic</div>
                 <main className={classes.Content}>
                     {this.props.children}
                 </main>
