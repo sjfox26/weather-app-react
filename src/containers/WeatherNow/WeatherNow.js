@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Aux/Aux';
 import axios from 'axios';
+import classes from './WeatherNow.css';
 
 
 class WeatherNow extends Component {
@@ -72,14 +73,17 @@ class WeatherNow extends Component {
 
         return (
             <Aux>
-                <div>Weather Search</div>
-                <div>
-                    <h3>The Current Weather in: {this.state.city}</h3>
-                    <p>Conditions: <span style={{textTransform: 'capitalize'}}>{this.state.weather_description}</span></p>
-                    <p>Temperature: {(9/5 * (this.state.temp - 273) + 32).toFixed(2)} Fahrenheit</p>
-                    <p>Humidity: {this.state.humidity}%</p>
-                    <input type="text" onChange={this.typingInputHandler}></input>
-                    <button onClick={this.updateSearch}>Search</button>
+                <div className={classes.WeatherNow}>
+                    <h2>Weather Search</h2>
+                    <div>
+                        <h4>The Current Weather in: {this.state.city}</h4>
+                        <p>Conditions: <span style={{textTransform: 'capitalize'}}>{this.state.weather_description}</span></p>
+                        <p>Temperature: {(9/5 * (this.state.temp - 273) + 32).toFixed(2)} Fahrenheit</p>
+                        <p>Humidity: {this.state.humidity}%</p>
+                        <br/>
+                        <input type="text" placeholder="Search City..." onChange={this.typingInputHandler}></input>
+                        <button onClick={this.updateSearch}>Search</button>
+                    </div>
                 </div>
 
             </Aux>
