@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Aux from '../../hoc/Aux/Aux';
 import classes from './Layout.css';
+import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 
 class Layout extends Component {
 
     render () {
         return (
             <Aux>
-                <div>Toolbar, SideDrawer, Backdrop</div>
+                <Toolbar />
                 <div className={classes.Graphic}>
                     Cool Weather App
                     <div className={classes.Sun}></div>
