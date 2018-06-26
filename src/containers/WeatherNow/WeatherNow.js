@@ -78,7 +78,7 @@ class WeatherNow extends Component {
                     <div>
                         <h4>The Current Weather in: {this.state.city}</h4>
                         <p>Conditions: <span style={{textTransform: 'capitalize'}}>{this.state.weather_description}</span></p>
-                        <p>Temperature: {(9/5 * (this.state.temp - 273) + 32).toFixed(2)} Fahrenheit</p>
+                        <p>Temperature: {(9/5 * (this.state.temp - 273) + 32).toFixed(1)} °F</p>
                         <p>Humidity: {this.state.humidity}%</p>
                         <br/>
                         <input type="text" placeholder="Search City..." onChange={this.typingInputHandler}></input>

@@ -1,4 +1,6 @@
 .Forecast {
     margin-top: 30px;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
