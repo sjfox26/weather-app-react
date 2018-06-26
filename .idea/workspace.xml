@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="617f6546-dc38-4359-96aa-34ab96b11e30" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Day/Day.css" afterPath="$PROJECT_DIR$/src/components/Day/Day.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Forecast/Forecast.css" afterPath="$PROJECT_DIR$/src/containers/Forecast/Forecast.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/Forecast/Forecast.js" afterPath="$PROJECT_DIR$/src/containers/Forecast/Forecast.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/WeatherNow/WeatherNow.js" afterPath="$PROJECT_DIR$/src/containers/WeatherNow/WeatherNow.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeatherNow.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WeatherNow.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/WeatherNow/WeatherNow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="80" column="96" lean-forward="true" selection-start-line="80" selection-start-column="96" selection-end-line="80" selection-end-column="96" />
+            <state relative-caret-position="262">
+              <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="47" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -77,8 +77,8 @@
       <file leaf-file-name="Forecast.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/Forecast/Forecast.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="175">
+              <caret line="107" column="47" lean-forward="false" selection-start-line="107" selection-start-column="47" selection-end-line="107" selection-end-column="47" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -101,18 +101,18 @@
       <file leaf-file-name="Forecast.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/Forecast/Forecast.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+            <state relative-caret-position="135">
+              <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Day.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Day.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Day/Day.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+            <state relative-caret-position="30">
+              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -156,11 +156,11 @@
         <option value="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItem/NavigationItem.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/containers/WeatherNow/WeatherNow.css" />
-        <option value="$PROJECT_DIR$/src/containers/Forecast/Forecast.css" />
-        <option value="$PROJECT_DIR$/src/containers/Forecast/Forecast.js" />
-        <option value="$PROJECT_DIR$/src/components/Day/Day.css" />
         <option value="$PROJECT_DIR$/src/components/Day/Day.js" />
         <option value="$PROJECT_DIR$/src/containers/WeatherNow/WeatherNow.js" />
+        <option value="$PROJECT_DIR$/src/containers/Forecast/Forecast.js" />
+        <option value="$PROJECT_DIR$/src/containers/Forecast/Forecast.css" />
+        <option value="$PROJECT_DIR$/src/components/Day/Day.css" />
       </list>
     </option>
   </component>
@@ -291,12 +291,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529679304316</updated>
-      <workItem from="1529679306114" duration="45700000" />
+      <workItem from="1529679306114" duration="47516000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45700000" />
+    <option name="totallyTimeSpent" value="47516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -525,19 +525,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/WeatherNow/WeatherNow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Forecast/Forecast.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        <state relative-caret-position="135">
+          <caret line="9" column="34" lean-forward="true" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Day/Day.css">
+    <entry file="file://$PROJECT_DIR$/src/containers/Forecast/Forecast.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="175">
+          <caret line="107" column="47" lean-forward="false" selection-start-line="107" selection-start-column="47" selection-end-line="107" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -551,23 +563,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Forecast/Forecast.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Day/Day.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/WeatherNow/WeatherNow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="80" column="96" lean-forward="true" selection-start-line="80" selection-start-column="96" selection-end-line="80" selection-end-column="96" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

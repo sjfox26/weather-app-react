@@ -1,37 +1,51 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Aux from '../../hoc/Aux/Aux';
 
 import classes from './Forecast.css';
 import Day from "../../components/Day/Day";
 
+
 class Forecast extends Component {
 
     state = {
-        data: []
+        data: [],
+        city: ''
     }
-
 
     componentDidMount () {
 
-        let url = 'http://api.openweathermap.org/data/2.5/forecast?q=Chicago&APPID=' + process.env.REACT_APP_CURRENT_WEATHER_KEY;
+        this.updateSearch();
+
+    }
+
+    typingInputHandler = ( event ) => {
+        this.setState( {
+            //...this.state,
+            userInput: event.target.value
+        })
+    }
+
+    deleteLetterHandler = ( index ) => {
+        const text = this.state.userInput.split('');
+        text.splice(index, 1);
+        const newText = text.join('');
+        this.setState({
+            //...this.state,
+            userInput: newText
+        })
+    }
+
+    updateSearch = () => {
+        this.search(this.state.userInput);
+    }
+
+
+    search= (query = 'Chicago') => {
+
+        let url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + query + '&APPID=' + process.env.REACT_APP_CURRENT_WEATHER_KEY;
         axios.get(url)
             .then(res => {
-
-                let dateToConvert = '2018-06-26 05:13:43';
-                let date = new Date(dateToConvert);
-
-                let weekday = new Array(7);
-                weekday[0] =  "Sunday";
-                weekday[1] = "Monday";
-                weekday[2] = "Tuesday";
-                weekday[3] = "Wednesday";
-                weekday[4] = "Thursday";
-                weekday[5] = "Friday";
-                weekday[6] = "Saturday";
-
-                let n = weekday[date.getDay()];
-                console.log(n);
-
 
                 console.log(res.data);
 
@@ -48,8 +62,8 @@ class Forecast extends Component {
                 }
 
                 this.setState({
-                    ...this.state,
-                    data: dataArray
+                    data: dataArray,
+                    city: res.data.city.name
                 });
 
                /* let days = [];
@@ -90,14 +104,27 @@ class Forecast extends Component {
 
 
         return (
-            <div className={classes.Forecast}>
-                <Day weekday={this.state.data[0]} conditions={this.state.data[1]} highTemp={this.state.data[2]} lowTemp={this.state.data[3]} icon={this.state.data[4]}/>
-                <Day weekday={this.state.data[5]} conditions={this.state.data[6]} highTemp={this.state.data[7]} lowTemp={this.state.data[8]} icon={this.state.data[9]}/>
-                <Day weekday={this.state.data[10]} conditions={this.state.data[11]} highTemp={this.state.data[12]} lowTemp={this.state.data[13]} icon={this.state.data[14]}/>
-                <Day weekday={this.state.data[15]} conditions={this.state.data[16]} highTemp={this.state.data[17]} lowTemp={this.state.data[18]} icon={this.state.data[19]}/>
-                <Day weekday={this.state.data[20]} conditions={this.state.data[21]} highTemp={this.state.data[22]} lowTemp={this.state.data[23]} icon={this.state.data[24]}/>
-                {/*{dayList}*/}
-            </div>
+            <Aux>
+                <div className={classes.FiveDay}>
+                    <h4>The 5-Day Forecast for: {this.state.city}</h4>
+                </div>
+
+                <div className={classes.Forecast}>
+                    <Day weekday={this.state.data[0]} conditions={this.state.data[1]} highTemp={this.state.data[2]} lowTemp={this.state.data[3]} icon={this.state.data[4]}/>
+                    <Day weekday={this.state.data[5]} conditions={this.state.data[6]} highTemp={this.state.data[7]} lowTemp={this.state.data[8]} icon={this.state.data[9]}/>
+                    <Day weekday={this.state.data[10]} conditions={this.state.data[11]} highTemp={this.state.data[12]} lowTemp={this.state.data[13]} icon={this.state.data[14]}/>
+                    <Day weekday={this.state.data[15]} conditions={this.state.data[16]} highTemp={this.state.data[17]} lowTemp={this.state.data[18]} icon={this.state.data[19]}/>
+                    <Day weekday={this.state.data[20]} conditions={this.state.data[21]} highTemp={this.state.data[22]} lowTemp={this.state.data[23]} icon={this.state.data[24]}/>
+                    {/*{dayList}*/}
+                </div>
+
+                <div className={classes.Search}>
+                    <input type="text" placeholder="Search City..." onChange={this.typingInputHandler}></input>
+                    <button onClick={this.updateSearch}>Search</button>
+                </div>
+
+            </Aux>
+
         );
     }
 }
