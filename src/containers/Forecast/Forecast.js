@@ -26,15 +26,6 @@ class Forecast extends Component {
         })
     }
 
-    deleteLetterHandler = ( index ) => {
-        const text = this.state.userInput.split('');
-        text.splice(index, 1);
-        const newText = text.join('');
-        this.setState({
-            //...this.state,
-            userInput: newText
-        })
-    }
 
     updateSearch = () => {
         this.search(this.state.userInput);

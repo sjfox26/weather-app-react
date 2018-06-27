@@ -10,7 +10,6 @@ class Layout extends Component {
             <Aux>
                 <Toolbar />
                 <div className={classes.Graphic}>
-                    Cool Weather App
                     <div className={classes.Sun}></div>
                     <div className={classes.Grass}></div>
                 </div>
