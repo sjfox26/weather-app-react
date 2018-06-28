@@ -4,6 +4,7 @@ import axios from 'axios';
 import classes from './WeatherNow.css';
 
 
+
 class WeatherNow extends Component {
 
     state = {
@@ -36,9 +37,6 @@ class WeatherNow extends Component {
         let url = 'http://api.openweathermap.org/data/2.5/weather?q=' + query + '&APPID=' + process.env.REACT_APP_CURRENT_WEATHER_KEY;
         axios.get(url)
             .then(res => {
-                console.log(res.data);
-                console.log(res.data.weather[0].description);
-                console.log(res.data.main.temp);
 
                 const newDescription = res.data.weather[0].description;
                 const newTemp = res.data.main.temp;

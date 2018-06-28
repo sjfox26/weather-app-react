@@ -4,6 +4,7 @@ import Aux from '../../hoc/Aux/Aux';
 
 import classes from './Forecast.css';
 import Day from "../../components/Day/Day";
+import moment from 'moment';
 
 
 class Forecast extends Component {
@@ -38,7 +39,56 @@ class Forecast extends Component {
         axios.get(url)
             .then(res => {
 
+
+                //TODO: Probably should send the whole data object along to Day Component, with these methods, and output JSX where testin map is
+                //returns the whole data object
                 console.log(res.data);
+
+                //https://github.com/Gigacore/react-weather-forecast/blob/master/src/components/ForecastTiles.js
+                //// "Filters the data by date and returns an Object containing a list of 5-day forecast." ^^
+                const groupByDays = (data) => {
+                    return (data.reduce((list, item) => {
+                        const forecastDate = item.dt_txt.substr(0,10);
+                        list[forecastDate] = list[forecastDate] || [];
+                        list[forecastDate].push(item);
+
+                        return list;
+                    }, {}));
+                };
+
+
+                let x = Object.values(groupByDays(res.data.list));
+                //returns the five arrays of 8 arrays
+                console.log(x);
+
+
+                const getInfo = (data, min=[], max=[], humidity=[]) => {
+
+                    data.map(item => {
+                        max.push(item.main.temp_max);
+                        min.push(item.main.temp_min);
+                    });
+
+                    const minMax = {
+                        min: Math.round(Math.min(...min)),
+                        max: Math.round(Math.max(...max)),
+                    };
+
+                    let m = minMax.max;
+                    console.log(m);
+
+                    let minn = minMax.min;
+                    console.log(minn);
+                }
+
+
+                let testin = x.map((item) => {
+                   getInfo(item);
+                });
+
+
+
+
 
                 let dataArray = [];
 
