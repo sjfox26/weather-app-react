@@ -24,12 +24,23 @@ const Day = (props) => {
         return weekday[dayString.getDay()];
     };
 
+    let x = props.testProp;
+    console.log(x);
+
+    let y = props.testListProp;
+    console.log(y);
+
+
+
+
+
     return (
         <Aux>
             <div className={classes.Day}>
-                <div><img src={icon}></img></div>
+
+                {/*<div><img src={icon}></img></div>
                 <div>{turnDatetoWeekday(props.weekday)}</div>
-                <div>Conditions: <span style={{textTransform: 'capitalize'}}>{props.conditions}</span></div>
+                <div>Conditions: <span style={{textTransform: 'capitalize'}}>{props.conditions}</span></div>*/}
                 <div>High: {(9/5 * (props.highTemp - 273) + 32).toFixed(1)} °F</div>
                 <div>Low: {(9/5 * (props.lowTemp - 273) + 32).toFixed(1)} °F</div>
             </div>
