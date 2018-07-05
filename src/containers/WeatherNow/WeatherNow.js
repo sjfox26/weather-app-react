@@ -16,7 +16,6 @@ class WeatherNow extends Component {
 
 
     componentDidMount () {
-
         this.updateSearch();
 
     }
@@ -37,6 +36,7 @@ class WeatherNow extends Component {
         let url = 'http://api.openweathermap.org/data/2.5/weather?q=' + query + '&APPID=' + process.env.REACT_APP_CURRENT_WEATHER_KEY;
         axios.get(url)
             .then(res => {
+                console.log("hello");
 
                 const newDescription = res.data.weather[0].description;
                 const newTemp = res.data.main.temp;

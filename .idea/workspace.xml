@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="617f6546-dc38-4359-96aa-34ab96b11e30" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,11 +26,28 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+=======
+      <file leaf-file-name="forecast.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/actions/forecast.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="129" lean-forward="true" selection-start-line="18" selection-start-column="129" selection-end-line="18" selection-end-column="129" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -45,6 +63,48 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Forecast.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/Forecast/Forecast.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="176" column="109" lean-forward="true" selection-start-line="176" selection-start-column="109" selection-end-line="176" selection-end-column="109" />
+              <folding>
+                <element signature="e#72#108#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/actions/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+>>>>>>> setup-redux
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="79" lean-forward="false" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
+=======
+      <file leaf-file-name="forecast.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/reducers/forecast.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+>>>>>>> setup-redux
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="Forecast.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/Forecast/Forecast.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,6 +123,15 @@
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <marker date="1530810497000" expanded="true" signature="288:291" ph="&lt;Provider/&gt;" />
+=======
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+>>>>>>> setup-redux
               </folding>
             </state>
           </provider>
@@ -71,8 +140,13 @@
       <file leaf-file-name="Day.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Day/Day.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="319">
               <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+=======
+            <state relative-caret-position="379">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+>>>>>>> setup-redux
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <marker date="1530810497000" expanded="true" signature="123:1096" ph="{...}" />
@@ -87,7 +161,11 @@
         <entry file="file://$PROJECT_DIR$/src/containers/WeatherNow/WeatherNow.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="570">
+<<<<<<< HEAD
               <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+=======
+              <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+>>>>>>> setup-redux
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <marker date="1530810497000" expanded="true" signature="184:2191" ph="{...}" />
@@ -118,16 +196,13 @@
         <option value="$PROJECT_DIR$/src/hoc/Aux/Aux.js" />
         <option value="$PROJECT_DIR$/src/axios-weather-now.js" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/Toolbar/Toolbar.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.css" />
         <option value="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItem/NavigationItem.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/containers/WeatherNow/WeatherNow.css" />
-        <option value="$PROJECT_DIR$/src/components/Day/Day.js" />
         <option value="$PROJECT_DIR$/src/components/Day/Day.css" />
         <option value="$PROJECT_DIR$/src/hoc/Layout/Layout.js" />
         <option value="$PROJECT_DIR$/src/hoc/Layout/Layout.css" />
@@ -136,7 +211,13 @@
         <option value="$PROJECT_DIR$/src/containers/Forecast/Forecast.css" />
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/containers/WeatherNow/WeatherNow.js" />
+        <option value="$PROJECT_DIR$/src/components/Day/Day.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/store/reducers/forecast.js" />
+        <option value="$PROJECT_DIR$/src/store/actions/index.js" />
         <option value="$PROJECT_DIR$/src/containers/Forecast/Forecast.js" />
+        <option value="$PROJECT_DIR$/src/store/actions/forecast.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -191,6 +272,29 @@
               <item name="weather-app-react" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+=======
+            <path>
+              <item name="weather-app-react" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weather-app-react" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weather-app-react" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weather-app-react" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weather-app-react" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weather-app-react" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+>>>>>>> setup-redux
           </expand>
           <select />
         </subPane>
@@ -228,12 +332,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529679304316</updated>
-      <workItem from="1529679306114" duration="62448000" />
+      <workItem from="1529679306114" duration="81571000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="62599000" />
+=======
+    <option name="totallyTimeSpent" value="81571000" />
+>>>>>>> setup-redux
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -246,7 +354,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -308,7 +416,22 @@
         <state relative-caret-position="105">
           <caret line="7" column="66" lean-forward="true" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#0#26#0" expanded="false" />
+=======
+            <marker date="1530805627000" expanded="true" signature="92:1514" ph="{&quot;autoprefixer&quot;: &quot;7.1.6&quot;...}" />
+            <marker date="1530805627000" expanded="true" signature="1529:1657" ph="{&quot;start&quot;: &quot;node scripts/start.js&quot;...}" />
+            <marker date="1530805627000" expanded="true" signature="1669:2545" ph="{&quot;testEnvironment&quot;: &quot;node&quot;...}" />
+            <marker date="1530805627000" expanded="true" signature="1698:1735" ph="[...]" />
+            <marker date="1530805627000" expanded="true" signature="1755:1800" ph="[...]" />
+            <marker date="1530805627000" expanded="true" signature="1819:1935" ph="[...]" />
+            <marker date="1530805627000" expanded="true" signature="2020:2237" ph="{&quot;^.+\.(js|jsx|mjs)$&quot;: &quot;&lt;rootDir&gt;/node_modules/babel-jest&quot;...}" />
+            <marker date="1530805627000" expanded="true" signature="2270:2330" ph="[...]" />
+            <marker date="1530805627000" expanded="true" signature="2356:2406" ph="{&quot;^react-native$&quot;: &quot;react-native-web&quot;...}" />
+            <marker date="1530805627000" expanded="true" signature="2436:2541" ph="[...]" />
+            <marker date="1530805627000" expanded="true" signature="2558:2604" ph="{...}" />
+            <marker date="1530805627000" expanded="true" signature="2575:2600" ph="[...]" />
+>>>>>>> setup-redux
           </folding>
         </state>
       </provider>
@@ -492,6 +615,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -501,6 +625,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/webpack.config.dev.js">
+=======
+    <entry file="file://$PROJECT_DIR$/src/axios-weather-now.js">
+>>>>>>> setup-redux
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="166" column="20" lean-forward="false" selection-start-line="166" selection-start-column="20" selection-end-line="166" selection-end-column="20" />
@@ -549,6 +676,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -560,6 +688,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> setup-redux
     <entry file="file://$PROJECT_DIR$/src/components/Navigation/NavigationItems/NavigationItems.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -653,6 +783,7 @@
     <entry file="file://$PROJECT_DIR$/src/containers/WeatherNow/WeatherNow.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
+<<<<<<< HEAD
           <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
@@ -665,12 +796,18 @@
             <marker date="1530810497000" expanded="true" signature="1388:2171" ph="&lt;Aux/&gt;" />
             <marker date="1530810497000" expanded="true" signature="1410:2151" ph="&lt;div/&gt;" />
             <marker date="1530810497000" expanded="true" signature="1511:2128" ph="&lt;div/&gt;" />
+=======
+          <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+>>>>>>> setup-redux
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Day/Day.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="319">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
@@ -678,6 +815,12 @@
             <marker date="1530810497000" expanded="true" signature="123:1096" ph="{...}" />
             <marker date="1530810497000" expanded="true" signature="885:1072" ph="&lt;div/&gt;" />
             <marker date="1530810497000" expanded="true" signature="885:1087" ph="&lt;Aux/&gt;" />
+=======
+        <state relative-caret-position="379">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+>>>>>>> setup-redux
           </folding>
         </state>
       </provider>
@@ -692,6 +835,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -705,13 +849,70 @@
         <state relative-caret-position="45">
           <caret line="3" column="79" lean-forward="false" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+>>>>>>> setup-redux
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="79" lean-forward="false" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/forecast.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Forecast/Forecast.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="2079">
           <caret line="163" column="71" lean-forward="false" selection-start-line="163" selection-start-column="71" selection-end-line="163" selection-end-column="71" />
+          <folding />
+=======
+        <state relative-caret-position="205">
+          <caret line="176" column="109" lean-forward="true" selection-start-line="176" selection-start-column="109" selection-end-line="176" selection-end-column="109" />
+          <folding>
+            <element signature="e#72#108#0" expanded="true" />
+          </folding>
+>>>>>>> setup-redux
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions/forecast.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="129" lean-forward="true" selection-start-line="18" selection-start-column="129" selection-end-line="18" selection-end-column="129" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>

@@ -1,6 +1,11 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+<<<<<<< HEAD
+=======
+# for github pushes
+>>>>>>> setup-redux
 .idea/
+.idea/workspace.xml
 
 # api keys
 .env
