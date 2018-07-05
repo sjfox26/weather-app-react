@@ -4,14 +4,15 @@ import Aux from '../../hoc/Aux/Aux';
 import { connect } from 'react-redux';
 
 import classes from './Forecast.css';
-// import Day from "../../components/Day/Day";
+import Day from "../../components/Day/Day";
 import * as actions from '../../store/actions/index';
 
 
 class Forecast extends Component {
 
     state = {
-        userInput: ''
+        userInput: '',
+        keyCount: 0
     }
 
     componentDidMount () {
@@ -31,137 +32,79 @@ class Forecast extends Component {
         })
     }
 
+    //https://github.com/Gigacore/react-weather-forecast/blob/master/src/components/ForecastTiles.js
+    //// "Filters the data by date and returns an Object containing a list of 5-day forecast." ^^
 
-    /*updateSearch = () => {
-        this.search(this.state.userInput);
+    groupByDays = (data) => {
+        return (data.reduce((list, item) => {
+            const forecastDate = item.dt_txt.substr(0,10);
+            list[forecastDate] = list[forecastDate] || [];
+            list[forecastDate].push(item);
+
+            return list;
+        }, {}));
+    };
+
+
+
+    getInfo = (data, min=[], max=[]) => {
+
+        data.map(item => {
+            max.push(item.main.temp_max);
+            min.push(item.main.temp_min);
+        });
+
+        const minMax = {
+            min: Math.min(...min),
+            max: Math.max(...max)
+        };
+
+        let m = minMax.max;
+        console.log(m);
+
+        let minimum = minMax.min;
+        console.log(minimum);
+
+
+
+        return (
+            <Day key={m} highTemp={m} lowTemp={minimum} />
+        );
     }
 
-
-    search= (query = 'Chicago') => {
-
-        let url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + query + '&APPID=' + process.env.REACT_APP_CURRENT_WEATHER_KEY;
-        axios.get(url)
-            .then(res => {
-
-
-                console.log(res.data);
-
-                this.setState({
-                    test: res.data,
-                    testList: res.data.list
-                });*/
-
-
-
-
-
-                //https://github.com/Gigacore/react-weather-forecast/blob/master/src/components/ForecastTiles.js
-                //// "Filters the data by date and returns an Object containing a list of 5-day forecast." ^^
-                /*const groupByDays = (data) => {
-                    return (data.reduce((list, item) => {
-                        const forecastDate = item.dt_txt.substr(0,10);
-                        list[forecastDate] = list[forecastDate] || [];
-                        list[forecastDate].push(item);
-
-                        return list;
-                    }, {}));
-                };
-
-
-                let fiveDays = Object.values(groupByDays(res.data.list));
-                //returns the five arrays of 8 arrays
-                //the dates are the keys and as such aren't returned here
-                console.log(fiveDays);
-
-
-                const getInfo = (data, min=[], max=[], humidity=[]) => {
-
-                    data.map(item => {
-                        max.push(item.main.temp_max);
-                        min.push(item.main.temp_min);
-                    });
-
-                    const minMax = {
-                        min: Math.round(Math.min(...min)),
-                        max: Math.round(Math.max(...max)),
-                    };
-
-                    let m = minMax.max;
-                    console.log(m);
-
-
-                    let minimum = minMax.min;
-                    console.log(minimum);
-
-                    //return <Day highTemp={m} lowTemp={minimum} />
-                }
-
-
-                let testin = fiveDays.map((item) => {
-                   getInfo(item);
-                });
-*/
-
-                /*let dataArray = [];
-
-                for (let i = 0; i < 33; i=i+8) {
-
-                    dataArray.push(res.data.list[i].dt_txt);
-                    dataArray.push(res.data.list[i].weather[0].description);
-                    dataArray.push(res.data.list[i].main.temp_max);
-                    dataArray.push(res.data.list[i].main.temp_min);
-                    dataArray.push(res.data.list[i].weather[0].icon);
-
-                }
-
-                this.setState({
-                    data: dataArray,
-                    city: res.data.city.name
-                });
-
-                let days = [];
-
-                for (let i = 0; i < 33; i=i+8) {
-
-                    days.push = {
-                        name: res.data.list[i].dt_txt,
-                        descrip: res.data.list[i].weather[0].description,
-                        hi: res.data.list[i].main.temp_max,
-                        lo: res.data.list[i].main.temp_min
-                    };
-
-                }
-
-                this.setState({
-                    days: days
-                });*/
-
-
-
-
-            /*})
-
-    }*/
 
     render () {
 
         let city = <p>City can't be loaded</p>;
 
+        let testing = <p>Sorry, weather data is unavailable at this time</p>
+
         if (this.props.retrievedData) {
             city = (
                 <p>{this.props.retrievedData.list[0].main.temp_max}</p>
             );
+
+            //returns the five arrays of 8 arrays
+            //the dates are the keys and as such aren't returned here
+            let fiveDays = Object.values(this.groupByDays(this.props.retrievedData.list));
+
+            testing = fiveDays.map((item) => {
+                return (this.getInfo(item));
+            });
         }
+
+
+
 
         return (
             <Aux>
                 <div className={classes.FiveDay}>
                     {/*<h4>The 5-Day Forecast for: {this.state.city}</h4>*/}
                     {city}
-
                 </div>
 
                 <div className={classes.Forecast}>
+                    {testing}
                     {/*<Day testProp={this.state.test} testListProp={this.state.testList} />*/}
 
                     {/*<Day weekday={this.state.data[0]} conditions={this.state.data[1]} highTemp={this.state.data[2]} lowTemp={this.state.data[3]} icon={this.state.data[4]}/>

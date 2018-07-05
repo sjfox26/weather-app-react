@@ -24,12 +24,6 @@ const Day = (props) => {
         return weekday[dayString.getDay()];
     };
 
-    let x = props.testProp;
-    console.log(x);
-
-    let y = props.testListProp;
-    console.log(y);
-
 
 
 
