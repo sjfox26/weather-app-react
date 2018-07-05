@@ -81,7 +81,7 @@ class Forecast extends Component {
 
         if (this.props.retrievedData) {
             city = (
-                <p>{this.props.retrievedData.list[0].main.temp_max}</p>
+                <p>The Five-Day Forecast for: <b>{this.props.retrievedData.city.name}</b></p>
             );
 
             //returns the five arrays of 8 arrays
