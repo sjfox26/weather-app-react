@@ -1,5 +1,8 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+# for github pushes
+.idea/
+
 # api keys
 .env
 
