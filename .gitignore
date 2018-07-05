@@ -2,6 +2,7 @@
 
 # for github pushes
 .idea/
+.idea/workspace.xml
 
 # api keys
 .env
