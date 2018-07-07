@@ -65,8 +65,12 @@ class Forecast extends Component {
         let minimum = minMax.min;
         console.log(minimum);
 
+        //the fourth element will be the icon from midday
         let icon = `https://openweathermap.org/img/w/${data[4].weather[0].icon}.png`;
         console.log(icon);
+
+        let descrip = data[4].weather[0].description;
+        console.log(descrip);
 
         let day = data[0].dt_txt;
         console.log(day);
@@ -74,7 +78,7 @@ class Forecast extends Component {
 
 
         return (
-            <Day key={m} highTemp={m} lowTemp={minimum} icon={icon} weekday={day} />
+            <Day key={m} highTemp={m} lowTemp={minimum} icon={icon} conditions={descrip} weekday={day} />
         );
     }
 
