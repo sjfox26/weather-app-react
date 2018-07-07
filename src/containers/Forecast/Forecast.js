@@ -91,7 +91,7 @@ class Forecast extends Component {
 
         if (this.props.retrievedData) {
             city = (
-                <p>The Next 5 Days in: <b>{this.props.retrievedData.city.name}</b></p>
+                <p>The Next Five Days in: <b>{this.props.retrievedData.city.name}</b></p>
             );
 
             //returns the five arrays of 8 arrays

@@ -66,13 +66,17 @@ class WeatherNow extends Component {
         return (
             <Aux>
                 <div className={classes.WeatherNow}>
-                    <h2>Weather Search</h2>
+                    <h2>The Weather Now</h2>
                     <div>
-                        <h4>The Current Weather in: {this.state.city}</h4>
-                        <div><img src={this.state.icon}></img></div>
-                        <p>Conditions: <span style={{textTransform: 'capitalize'}}>{this.state.weather_description}</span></p>
-                        <p>Temperature: {(9/5 * (this.state.temp - 273) + 32).toFixed(1)} °F</p>
-                        <p>Humidity: {this.state.humidity}%</p>
+                        <p>The Current Weather in: <b>{this.state.city}</b></p>
+                        <div className={classes.Box}>
+                            <div>
+                                <img src={this.state.icon}></img>
+                            </div>
+                            <p><b>Conditions: </b><span style={{textTransform: 'capitalize'}}>{this.state.weather_description}</span></p>
+                            <p><b>Temperature: </b>{(9/5 * (this.state.temp - 273) + 32).toFixed(1)} °F</p>
+                            <p><b>Humidity: </b>{this.state.humidity}%</p>
+                        </div>
                         <br/>
                         <input type="text" placeholder="Search City..." onChange={this.typingInputHandler}></input>
                         <button onClick={this.updateSearch}>Search</button>
