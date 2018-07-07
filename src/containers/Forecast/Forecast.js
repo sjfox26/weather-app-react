@@ -65,10 +65,16 @@ class Forecast extends Component {
         let minimum = minMax.min;
         console.log(minimum);
 
+        let icon = `https://openweathermap.org/img/w/${data[4].weather[0].icon}.png`;
+        console.log(icon);
+
+        let day = data[0].dt_txt;
+        console.log(day);
+
 
 
         return (
-            <Day key={m} highTemp={m} lowTemp={minimum} />
+            <Day key={m} highTemp={m} lowTemp={minimum} icon={icon} weekday={day} />
         );
     }
 
@@ -77,18 +83,20 @@ class Forecast extends Component {
 
         let city = <p>City can't be loaded</p>;
 
-        let testing = <p>Sorry, weather data is unavailable at this time</p>
+        let forecast = <p>Sorry, weather data is unavailable at this time</p>
 
         if (this.props.retrievedData) {
             city = (
-                <p>The Five-Day Forecast for: <b>{this.props.retrievedData.city.name}</b></p>
+                <p>The Next 5 Days in: <b>{this.props.retrievedData.city.name}</b></p>
             );
 
             //returns the five arrays of 8 arrays
             //the dates are the keys and as such aren't returned here
-            let fiveDays = Object.values(this.groupByDays(this.props.retrievedData.list));
+            let forecastDays = Object.values(this.groupByDays(this.props.retrievedData.list));
 
-            testing = fiveDays.map((item) => {
+            const fiveDays = forecastDays.length > 5 ? forecastDays.slice(1, 6) : forecastDays;
+
+            forecast = fiveDays.map((item) => {
                 return (this.getInfo(item));
             });
         }
@@ -104,7 +112,7 @@ class Forecast extends Component {
                 </div>
 
                 <div className={classes.Forecast}>
-                    {testing}
+                    {forecast}
                     {/*<Day testProp={this.state.test} testListProp={this.state.testList} />*/}
 
                     {/*<Day weekday={this.state.data[0]} conditions={this.state.data[1]} highTemp={this.state.data[2]} lowTemp={this.state.data[3]} icon={this.state.data[4]}/>
