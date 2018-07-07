@@ -11,7 +11,8 @@ class WeatherNow extends Component {
         weather_description: '',
         temp: null,
         humidity: null,
-        city: ''
+        city: '',
+        icon: ''
     }
 
 
@@ -36,8 +37,10 @@ class WeatherNow extends Component {
         let url = 'http://api.openweathermap.org/data/2.5/weather?q=' + query + '&APPID=' + process.env.REACT_APP_CURRENT_WEATHER_KEY;
         axios.get(url)
             .then(res => {
-                console.log("hello");
+                console.log(res.data);
 
+                const iconNumber = res.data.weather[0].icon;
+                const icon = `http://openweathermap.org/img/w/${iconNumber}.png`;
                 const newDescription = res.data.weather[0].description;
                 const newTemp = res.data.main.temp;
                 const newHumidity = res.data.main.humidity;
@@ -47,7 +50,8 @@ class WeatherNow extends Component {
                     weather_description: newDescription,
                     temp: newTemp,
                     humidity: newHumidity,
-                    city: cityName
+                    city: cityName,
+                    icon: icon
                 });
 
 
@@ -65,6 +69,7 @@ class WeatherNow extends Component {
                     <h2>Weather Search</h2>
                     <div>
                         <h4>The Current Weather in: {this.state.city}</h4>
+                        <div><img src={this.state.icon}></img></div>
                         <p>Conditions: <span style={{textTransform: 'capitalize'}}>{this.state.weather_description}</span></p>
                         <p>Temperature: {(9/5 * (this.state.temp - 273) + 32).toFixed(1)} °F</p>
                         <p>Humidity: {this.state.humidity}%</p>
