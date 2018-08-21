@@ -128,8 +128,8 @@ class Forecast extends Component {
                 </div>
 
                 <div className={classes.Search}>
-                    <input type="text" placeholder="Search City..." onChange={this.typingInputHandler}></input>
-                    <button onClick={() => { this.props.onChangeCity(this.state.userInput) }}>Search</button>
+                    <input className={classes.Input} type="text" placeholder="Search City..." onChange={this.typingInputHandler}></input>
+                    <button className={classes.Button} onClick={() => { this.props.onChangeCity(this.state.userInput) }}>Search</button>
                 </div>
 
             </Aux>

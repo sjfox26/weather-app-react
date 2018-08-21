@@ -20,3 +20,21 @@
     margin-top: 50px;
     text-align: center;
 }
+
+.Input {
+    background-color: #fafafa;
+    color: black;
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 16px;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.Button {
+    color: black;
+    background: transparent;
+    border: 2px solid #494949;
+    border-radius: 6px;
+    padding: 10px;
+}

@@ -78,8 +78,8 @@ class WeatherNow extends Component {
                             <p><b>Humidity: </b>{this.state.humidity}%</p>
                         </div>
                         <br/>
-                        <input type="text" placeholder="Search City..." onChange={this.typingInputHandler}></input>
-                        <button onClick={this.updateSearch}>Search</button>
+                        <input className={classes.Input} type="text" placeholder="Search City..." onChange={this.typingInputHandler}></input>
+                        <button className={classes.Button} onClick={this.updateSearch}>Search</button>
                     </div>
                 </div>
 
