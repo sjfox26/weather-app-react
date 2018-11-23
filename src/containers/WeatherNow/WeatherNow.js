@@ -65,7 +65,7 @@ class WeatherNow extends Component {
 
         return (
             <Aux>
-                <div className={classes.WeatherNow}>
+                e<div className={classes.WeatherNow}>
                     <h2>The Weather Now</h2>
                     <div>
                         <p>The Current Weather in: <b>{this.state.city}</b></p>
