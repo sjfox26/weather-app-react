@@ -37,8 +37,6 @@ class Forecast extends Component {
         }, {}));
     };
 
-
-
     getInfo = (data, min=[], max=[]) => {
 
         data.map(item => {
@@ -67,8 +65,6 @@ class Forecast extends Component {
         let day = data[0].dt_txt;
         console.log(day);
 
-
-
         return (
             <Day key={m} highTemp={m} lowTemp={minimum} icon={icon} conditions={descrip} weekday={day} />
         );
@@ -76,7 +72,6 @@ class Forecast extends Component {
 
 
     render () {
-
         let city = <p>City can't be loaded</p>;
 
         let forecast = <p>Sorry, weather data is unavailable at this time</p>
@@ -115,7 +110,6 @@ class Forecast extends Component {
                     <button className={classes.Button} onClick={() => { this.props.onChangeCity(this.state.userInput) }}>Search</button>
                 </div>
             </Aux>
-
         );
     }
 }

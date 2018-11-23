@@ -15,7 +15,6 @@ class WeatherNow extends Component {
         icon: ''
     }
 
-
     componentDidMount () {
         this.updateSearch();
 
@@ -26,7 +25,6 @@ class WeatherNow extends Component {
             userInput: event.target.value
         })
     }
-
 
     updateSearch = () => {
         this.search(this.state.userInput);
@@ -52,16 +50,10 @@ class WeatherNow extends Component {
                     city: cityName,
                     icon: icon
                 });
-
-
             })
     }
 
-
-
     render () {
-
-
         return (
             <Aux>
                 e<div className={classes.WeatherNow}>
@@ -81,9 +73,7 @@ class WeatherNow extends Component {
                         <button className={classes.Button} onClick={this.updateSearch}>Search</button>
                     </div>
                 </div>
-
             </Aux>
-
         );
     }
 }
