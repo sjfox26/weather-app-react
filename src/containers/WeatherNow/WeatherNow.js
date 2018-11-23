@@ -23,7 +23,6 @@ class WeatherNow extends Component {
 
     typingInputHandler = ( event ) => {
         this.setState( {
-            //...this.state,
             userInput: event.target.value
         })
     }
