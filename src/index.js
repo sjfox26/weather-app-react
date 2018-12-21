@@ -7,7 +7,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import reducer from './store/reducers/forecast';
 import thunk from 'redux-thunk';
 
@@ -27,4 +26,4 @@ const app = (
 );
 
 ReactDOM.render(app, document.getElementById('root'));
-registerServiceWorker();
+
