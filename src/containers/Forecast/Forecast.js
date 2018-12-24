@@ -42,6 +42,8 @@ class Forecast extends Component {
         data.map(item => {
             max.push(item.main.temp_max);
             min.push(item.main.temp_min);
+            console.log(max);
+            console.log(min);
         });
 
         const minMax = {
@@ -50,24 +52,26 @@ class Forecast extends Component {
         };
 
         let m = minMax.max;
-        console.log(m);
+        //console.log(m);
 
         let minimum = minMax.min;
-        console.log(minimum);
+        //console.log(minimum);
 
-        //the fourth element will be the icon from midday
-        let icon = `https://openweathermap.org/img/w/${data[4].weather[0].icon}.png`;
-        console.log(icon);
+        //the fifth element will be the icon from afternoon
+        let icon = `https://openweathermap.org/img/w/${data[5].weather[0].icon}.png`;
+        //console.log(data);
 
-        let descrip = data[4].weather[0].description;
-        console.log(descrip);
+        let descrip = data[5].weather[0].description;
+        //console.log(descrip);
 
         let day = data[0].dt_txt;
-        console.log(day);
+        //console.log(day);
 
-        return (
+        let dayInfo = (
             <Day key={m} highTemp={m} lowTemp={minimum} icon={icon} conditions={descrip} weekday={day} />
         );
+
+        return dayInfo;
     }
 
 

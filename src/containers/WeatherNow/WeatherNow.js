@@ -12,7 +12,8 @@ class WeatherNow extends Component {
         temp: null,
         humidity: null,
         city: '',
-        icon: ''
+        icon: '',
+        userInput: 'Chicago'
     }
 
     componentDidMount () {
@@ -48,30 +49,37 @@ class WeatherNow extends Component {
                     temp: newTemp,
                     humidity: newHumidity,
                     city: cityName,
-                    icon: icon
+                    icon: icon,
+                    userInput: query
                 });
             })
+    }
+
+    renderCityWeather() {
+        return (
+            <div>
+                <p>The Current Weather in: <b>{this.state.city}</b></p>
+                <div className={classes.Box}>
+                    <div>
+                        <img src={this.state.icon} alt="Weather Icon"></img>
+                    </div>
+                    <p><b>Conditions: </b><span style={{textTransform: 'capitalize'}}>{this.state.weather_description}</span></p>
+                    <p><b>Temperature: </b>{(9/5 * (this.state.temp - 273) + 32).toFixed(1)} °F</p>
+                    <p><b>Humidity: </b>{this.state.humidity}%</p>
+                </div>
+                <br/>
+                <input className={classes.Input} type="text" placeholder="Search City..." onChange={this.typingInputHandler}></input>
+                <button className={classes.Button} onClick={this.updateSearch}>Search</button>
+            </div>
+        );
     }
 
     render () {
         return (
             <Aux>
-                e<div className={classes.WeatherNow}>
+                <div className={classes.WeatherNow}>
                     <h2>The Weather Now</h2>
-                    <div>
-                        <p>The Current Weather in: <b>{this.state.city}</b></p>
-                        <div className={classes.Box}>
-                            <div>
-                                <img src={this.state.icon}></img>
-                            </div>
-                            <p><b>Conditions: </b><span style={{textTransform: 'capitalize'}}>{this.state.weather_description}</span></p>
-                            <p><b>Temperature: </b>{(9/5 * (this.state.temp - 273) + 32).toFixed(1)} °F</p>
-                            <p><b>Humidity: </b>{this.state.humidity}%</p>
-                        </div>
-                        <br/>
-                        <input className={classes.Input} type="text" placeholder="Search City..." onChange={this.typingInputHandler}></input>
-                        <button className={classes.Button} onClick={this.updateSearch}>Search</button>
-                    </div>
+                    {this.renderCityWeather()}
                 </div>
             </Aux>
         );

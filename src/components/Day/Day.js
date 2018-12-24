@@ -36,7 +36,7 @@ const Day = (props) => {
                 **/}
                 <div>{turnDatetoWeekday(props.weekday)}</div>
                 <div><span style={{textTransform: 'capitalize'}}>{props.conditions}</span></div>
-                <div><img src={props.icon}></img></div>
+                <div><img src={props.icon} alt="Weekday icon"/></div>
                 <div>High: {(9/5 * (props.highTemp - 273) + 32).toFixed(1)} °F</div>
                 <div>Low: {(9/5 * (props.lowTemp - 273) + 32).toFixed(1)} °F</div>
             </div>
