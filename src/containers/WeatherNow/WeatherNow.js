@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Aux from '../../hoc/Aux/Aux';
 import axios from 'axios';
+
+import Aux from '../../hoc/Aux/Aux';
+import CurrentWeatherBox from '../../components/CurrentWeatherBox/CurrentWeatherBox';
 import classes from './WeatherNow.css';
 
 
@@ -21,17 +23,11 @@ class WeatherNow extends Component {
 
     }
 
-    typingInputHandler = ( event ) => {
-        this.setState( {
-            userInput: event.target.value
-        })
-    }
-
     updateSearch = () => {
         this.search(this.state.userInput);
     }
 
-    search = (query = 'Chicago') => {
+    search = (query) => {
         let url = 'http://api.openweathermap.org/data/2.5/weather?q=' + query + '&APPID=' + process.env.REACT_APP_CURRENT_WEATHER_KEY;
         axios.get(url)
             .then(res => {
@@ -44,7 +40,6 @@ class WeatherNow extends Component {
                 const newHumidity = res.data.main.humidity;
                 const cityName = res.data.name;
                 this.setState({
-                    //...this.state,
                     weather_description: newDescription,
                     temp: newTemp,
                     humidity: newHumidity,
@@ -55,23 +50,10 @@ class WeatherNow extends Component {
             })
     }
 
-    renderCityWeather() {
-        return (
-            <div>
-                <p>The Current Weather in: <b>{this.state.city}</b></p>
-                <div className={classes.Box}>
-                    <div>
-                        <img src={this.state.icon} alt="Weather Icon"></img>
-                    </div>
-                    <p><b>Conditions: </b><span style={{textTransform: 'capitalize'}}>{this.state.weather_description}</span></p>
-                    <p><b>Temperature: </b>{(9/5 * (this.state.temp - 273) + 32).toFixed(1)} °F</p>
-                    <p><b>Humidity: </b>{this.state.humidity}%</p>
-                </div>
-                <br/>
-                <input className={classes.Input} type="text" placeholder="Search City..." onChange={this.typingInputHandler}></input>
-                <button className={classes.Button} onClick={this.updateSearch}>Search</button>
-            </div>
-        );
+    typingInputHandler = ( event ) => {
+      this.setState( {
+        userInput: event.target.value
+      })
     }
 
     render () {
@@ -79,7 +61,14 @@ class WeatherNow extends Component {
             <Aux>
                 <div className={classes.WeatherNow}>
                     <h2>The Weather Now</h2>
-                    {this.renderCityWeather()}
+                    <CurrentWeatherBox
+                      city={this.state.city}
+                      icon={this.state.icon}
+                      description={this.state.weather_description}
+                      temp={this.state.temp}
+                      humidity={this.state.humidity}
+                      onTyping={this.typingInputHandler}
+                      onButtonPress={this.updateSearch}  />
                 </div>
             </Aux>
         );

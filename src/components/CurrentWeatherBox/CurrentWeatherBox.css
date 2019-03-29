@@ -1,0 +1,30 @@
+.Box {
+    width: 30%;
+    margin: 30px auto;
+    font-weight: inherit;
+    padding: 30px;
+    box-shadow: 0 2px 3px #ccc;
+    border: 1px solid #eee;
+}
+
+.Input {
+    background-color: #fafafa;
+    color: black;
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 16px;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.Button {
+    color: black;
+    background: transparent;
+    border: 2px solid #494949;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.Description {
+    text-transform: capitalize;
+}
