@@ -10,14 +10,14 @@ const CurrentWeatherBox = (props) => {
 
   return (
     <div>
-      <p>The Current Weather in: <b>{props.city}</b></p>
+      <p>The Current Weather in: <span className={classes.Bold}>{props.city}</span></p>
       <div className={classes.Box}>
         <div>
           <img src={props.icon} alt="Weather Icon"/>
         </div>
-        <p><b>Conditions: </b><span className={classes.Description}>{props.description}</span></p>
-        <p><b>Temperature: </b>{convertTemp(props.temp)} °F</p>
-        <p><b>Humidity: </b>{props.humidity}%</p>
+        <p><span className={classes.Bold}>Conditions: </span><span className={classes.Description}>{props.description}</span></p>
+        <p><span className={classes.Bold}>Temperature: </span>{convertTemp(props.temp)} °F</p>
+        <p><span className={classes.Bold}>Humidity: </span>{props.humidity}%</p>
       </div>
 
       <SearchButton onTyping={props.onTyping} onButtonPress={props.onButtonPress} />

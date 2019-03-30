@@ -10,3 +10,7 @@
 .Description {
     text-transform: capitalize;
 }
+
+.Bold {
+    font-weight: bold;
+}

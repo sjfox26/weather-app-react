@@ -27,11 +27,17 @@ class Forecast extends Component {
       })
   }
 
-  onButtonPress = () => {
-    this.changeCitay(this.state.userInput);
+  typingInputHandler = ( event ) => {
+    this.setState( {
+      userInput: event.target.value
+    })
   }
 
-  changeCitay = async (city) => {
+  onButtonPress = () => {
+    this.changeCity(this.state.userInput);
+  }
+
+  changeCity = async (city) => {
     let url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=` + process.env.REACT_APP_CURRENT_WEATHER_KEY;
 
     await axios.get(url)
@@ -40,14 +46,9 @@ class Forecast extends Component {
       })
   };
 
-  typingInputHandler = ( event ) => {
-    this.setState( {
-      userInput: event.target.value
-    })
-  }
-
   //https://github.com/Gigacore/react-weather-forecast/blob/master/src/components/ForecastTiles.js
   //// "Filters the data by date and returns an Object containing a list of 5-day forecast." ^^
+
   // the value of the Object's properties is an array containing subarrays of weather info (data every 3 hours)
   // ex: called on Monday at 3:23pm...
   // { Monday: [ [9p] ], Tuesday: [ [12a], [3a], [...], [], [], [], [], [] ], Wednesday: [ [], [], [], [], [], [], [], [] ], Thursday: [ [], [], [], [], [], [], [], [] ],
@@ -63,15 +64,16 @@ class Forecast extends Component {
   };
 
   //takes each day's array of hourly subarrays
+  //returns a Day component
   getInfoForDay = (dayData, min=[], max=[]) => {
 
-      //collect min and max temperature data
+      //collect min and max temperature data for the day
       dayData.map(hourData => {
           max.push(hourData.main.temp_max);
           min.push(hourData.main.temp_min);
       });
 
-      //determine the min and the max temperature for each day
+      //determine the min and the max temperature for that day
       const minMax = {
           min: Math.min(...min),
           max: Math.max(...max)
@@ -81,8 +83,7 @@ class Forecast extends Component {
       let m = minMax.max;
       let minimum = minMax.min;
 
-      //the fifth element should ideally be the icon from afternoon
-      //TO DO: fix the groupByDays method if possible
+      //store the icon
       let icon = `https://openweathermap.org/img/w/${dayData[4].weather[0].icon}.png`;
 
       //store the description
@@ -110,16 +111,16 @@ class Forecast extends Component {
           );
 
           //returns five or six arrays, each containing subarrays of weather info (data every 3 hours)
-          let forecastDays = Object.values(this.groupByDays(this.state.data.list));
+          let forecastDaysReturned = Object.values(this.groupByDays(this.state.data.list));
 
           //this ignores current day info
           //TO DO: fix to account for potential shortage of info for 5th Day of Forecast (as of now we get 40 total arrays depending on when data was fetched)
           //example above groupByDays function
-          const days = forecastDays.length > 5 ? forecastDays.slice(1, 6) : forecastDays;
+          const fiveDays = forecastDaysReturned.length > 5 ? forecastDaysReturned.slice(1, 6) : forecastDaysReturned;
 
           //day is an array of subarrays- subarrays contain hourly weather data
           //returns a Day Component for each of the 5 days
-          forecast = days.map((day) => {
+          forecast = fiveDays.map((day) => {
               return (this.getInfoForDay(day));
           });
       }
