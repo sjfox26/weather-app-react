@@ -1,5 +1,7 @@
+/////KEEPING AROUND IN CASE I DECIDE TO REIMPLEMENT REDUX
+
 const initialState = {
-    weather: undefined
+    weather: undefined,
 };
 
 const setData = (state, action) => {

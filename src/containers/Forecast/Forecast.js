@@ -1,134 +1,147 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import axios from 'axios';
 
 import Aux from '../../hoc/Aux/Aux';
-import Day from "../../components/Day/Day";
-import * as actions from '../../store/actions/index';
+import Day from '../../components/Day/Day';
 import classes from './Forecast.css';
+import SearchButton from '../../components/SearchButton/SearchButton';
 
 
 class Forecast extends Component {
 
-    state = {
-        userInput: '',
-        keyCount: 0
-    }
+  state = {
+      userInput: '',
+      data: undefined
+  }
 
-    componentDidMount () {
-        this.props.onInitData();
-    }
+  componentDidMount () {
+      this.onInitData();
+  }
 
-    typingInputHandler = ( event ) => {
-        this.setState( {
-            userInput: event.target.value
-        })
-    }
+  onInitData = async () => {
+    let url = 'http://api.openweathermap.org/data/2.5/forecast?q=Chicago&APPID=' + process.env.REACT_APP_CURRENT_WEATHER_KEY;
 
-    //https://github.com/Gigacore/react-weather-forecast/blob/master/src/components/ForecastTiles.js
-    //// "Filters the data by date and returns an Object containing a list of 5-day forecast." ^^
+    await axios.get(url)
+      .then(response => {
+        this.setState({data: response.data})
+      })
+  }
 
-    groupByDays = (data) => {
-        return (data.reduce((list, item) => {
-            const forecastDate = item.dt_txt.substr(0,10);
-            list[forecastDate] = list[forecastDate] || [];
-            list[forecastDate].push(item);
+  onButtonPress = () => {
+    this.changeCitay(this.state.userInput);
+  }
 
-            return list;
-        }, {}));
-    };
+  changeCitay = async (city) => {
+    let url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=` + process.env.REACT_APP_CURRENT_WEATHER_KEY;
 
-    getInfo = (data, min=[], max=[]) => {
+    await axios.get(url)
+      .then(response => {
+        this.setState({data: response.data});
+      })
+  };
 
-        data.map(item => {
-            max.push(item.main.temp_max);
-            min.push(item.main.temp_min);
-            console.log(max);
-            console.log(min);
-        });
+  typingInputHandler = ( event ) => {
+    this.setState( {
+      userInput: event.target.value
+    })
+  }
 
-        const minMax = {
-            min: Math.min(...min),
-            max: Math.max(...max)
-        };
+  //https://github.com/Gigacore/react-weather-forecast/blob/master/src/components/ForecastTiles.js
+  //// "Filters the data by date and returns an Object containing a list of 5-day forecast." ^^
+  // the value of the Object's properties is an array containing subarrays of weather info (data every 3 hours)
+  // ex: called on Monday at 3:23pm...
+  // { Monday: [ [9p] ], Tuesday: [ [12a], [3a], [...], [], [], [], [], [] ], Wednesday: [ [], [], [], [], [], [], [], [] ], Thursday: [ [], [], [], [], [], [], [], [] ],
+  //   Friday: [ [], [], [], [], [], [], [], [...] ], Sat: [ [12], [3a], [6a], [9a], [12p], [3p], [6p] ] }
+  groupByDays = (data) => {
+      return (data.reduce((list, item) => {
+          const forecastDate = item.dt_txt.substr(0,10);
+          list[forecastDate] = list[forecastDate] || [];
+          list[forecastDate].push(item);
 
-        let m = minMax.max;
-        //console.log(m);
+          return list;
+      }, {}));
+  };
 
-        let minimum = minMax.min;
-        //console.log(minimum);
+  //takes each day's array of hourly subarrays
+  getInfoForDay = (dayData, min=[], max=[]) => {
 
-        //the fifth element will be the icon from afternoon
-        let icon = `https://openweathermap.org/img/w/${data[5].weather[0].icon}.png`;
-        //console.log(data);
+      //collect min and max temperature data
+      dayData.map(hourData => {
+          max.push(hourData.main.temp_max);
+          min.push(hourData.main.temp_min);
+      });
 
-        let descrip = data[5].weather[0].description;
-        //console.log(descrip);
+      //determine the min and the max temperature for each day
+      const minMax = {
+          min: Math.min(...min),
+          max: Math.max(...max)
+      };
 
-        let day = data[0].dt_txt;
-        //console.log(day);
+      //store the min and max temp
+      let m = minMax.max;
+      let minimum = minMax.min;
 
-        let dayInfo = (
-            <Day key={m} highTemp={m} lowTemp={minimum} icon={icon} conditions={descrip} weekday={day} />
-        );
+      //the fifth element should ideally be the icon from afternoon
+      //TO DO: fix the groupByDays method if possible
+      let icon = `https://openweathermap.org/img/w/${dayData[4].weather[0].icon}.png`;
 
-        return dayInfo;
-    }
+      //store the description
+      let descrip = dayData[4].weather[0].description;
 
+      //store the name of the day
+      let day = dayData[0].dt_txt;
 
-    render () {
-        let city = <p>City can't be loaded</p>;
+      let dayInfo = (
+          <Day key={m} highTemp={m} lowTemp={minimum} icon={icon} conditions={descrip} weekday={day} />
+      );
 
-        let forecast = <p>Sorry, weather data is unavailable at this time</p>
-
-        if (this.props.retrievedData) {
-            city = (
-                <p>The Next Five Days in: <b>{this.props.retrievedData.city.name}</b></p>
-            );
-
-            //returns the five arrays of 8 arrays
-            //the dates are the keys and as such aren't returned here
-            let forecastDays = Object.values(this.groupByDays(this.props.retrievedData.list));
-
-            const fiveDays = forecastDays.length > 5 ? forecastDays.slice(1, 6) : forecastDays;
-
-            forecast = fiveDays.map((item) => {
-                return (this.getInfo(item));
-            });
-        }
+      return dayInfo;
+  }
 
 
 
+  render () {
+      let city = <p>City can't be loaded</p>;
+      let forecast = <p>Sorry, weather data is unavailable at this time</p>
 
-        return (
-            <Aux>
-                <div className={classes.FiveDay}>
-                    {city}
-                </div>
+      if (this.state.data) {
+          city = (
+              <p>The Next Five Days in: <b>{this.state.data.city.name}</b></p>
+          );
 
-                <div className={classes.Forecast}>
-                    {forecast}
-                </div>
+          //returns five or six arrays, each containing subarrays of weather info (data every 3 hours)
+          let forecastDays = Object.values(this.groupByDays(this.state.data.list));
 
-                <div className={classes.Search}>
-                    <input className={classes.Input} type="text" placeholder="Search City..." onChange={this.typingInputHandler}></input>
-                    <button className={classes.Button} onClick={() => { this.props.onChangeCity(this.state.userInput) }}>Search</button>
-                </div>
-            </Aux>
-        );
-    }
+          //this ignores current day info
+          //TO DO: fix to account for potential shortage of info for 5th Day of Forecast (as of now we get 40 total arrays depending on when data was fetched)
+          //example above groupByDays function
+          const days = forecastDays.length > 5 ? forecastDays.slice(1, 6) : forecastDays;
+
+          //day is an array of subarrays- subarrays contain hourly weather data
+          //returns a Day Component for each of the 5 days
+          forecast = days.map((day) => {
+              return (this.getInfoForDay(day));
+          });
+      }
+
+
+      return (
+          <Aux>
+              <div className={classes.FiveDay}>
+                  {city}
+              </div>
+
+              <div className={classes.Forecast}>
+                  {forecast}
+              </div>
+
+              <div className={classes.Search}>
+                  <SearchButton onTyping={this.typingInputHandler} onButtonPress={this.onButtonPress} />
+              </div>
+          </Aux>
+      );
+  }
 }
 
-const mapStateToProps = state => {
-    return {
-        retrievedData: state.weather
-    };
-}
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onInitData: () => dispatch(actions.initData()),
-        onChangeCity: (city) => dispatch(actions.changeCity(city))
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Forecast);
+export default Forecast;

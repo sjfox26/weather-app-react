@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from  './CurrentWeatherBox.css';
+import SearchButton from '../../components/SearchButton/SearchButton';
 
 const convertTemp = (tempToConvert) => {
   return (9/5 * (tempToConvert - 273) + 32).toFixed(1);
@@ -18,9 +19,8 @@ const CurrentWeatherBox = (props) => {
         <p><b>Temperature: </b>{convertTemp(props.temp)} °F</p>
         <p><b>Humidity: </b>{props.humidity}%</p>
       </div>
-      <br/>
-      <input className={classes.Input} type="text" placeholder="Search City..." onChange={props.onTyping}/>
-      <button className={classes.Button} onClick={props.onButtonPress}>Search</button>
+
+      <SearchButton onTyping={props.onTyping} onButtonPress={props.onButtonPress} />
     </div>
   );
 }

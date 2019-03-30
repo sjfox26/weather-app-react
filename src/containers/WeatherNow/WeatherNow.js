@@ -27,18 +27,21 @@ class WeatherNow extends Component {
         this.search(this.state.userInput);
     }
 
-    search = (query) => {
+    search = async (query) => {
         let url = 'http://api.openweathermap.org/data/2.5/weather?q=' + query + '&APPID=' + process.env.REACT_APP_CURRENT_WEATHER_KEY;
-        axios.get(url)
+        await axios.get(url)
             .then(res => {
-                console.log(res.data);
 
-                const iconNumber = res.data.weather[0].icon;
+                //destructure data property off of response returned by axios
+                const { data } = res;
+
+                const iconNumber = data.weather[0].icon;
                 const icon = `http://openweathermap.org/img/w/${iconNumber}.png`;
-                const newDescription = res.data.weather[0].description;
-                const newTemp = res.data.main.temp;
-                const newHumidity = res.data.main.humidity;
-                const cityName = res.data.name;
+                const newDescription = data.weather[0].description;
+                const newTemp = data.main.temp;
+                const newHumidity = data.main.humidity;
+                const cityName = data.name;
+
                 this.setState({
                     weather_description: newDescription,
                     temp: newTemp,
