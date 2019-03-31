@@ -51,8 +51,8 @@ class Forecast extends Component {
 
   // the value of the Object's properties is an array containing subarrays of weather info (data every 3 hours)
   // ex: called on Monday at 3:23pm...
-  // { Monday: [ [9p] ], Tuesday: [ [12a], [3a], [...], [], [], [], [], [] ], Wednesday: [ [], [], [], [], [], [], [], [] ], Thursday: [ [], [], [], [], [], [], [], [] ],
-  //   Friday: [ [], [], [], [], [], [], [], [...] ], Sat: [ [12], [3a], [6a], [9a], [12p], [3p], [6p] ] }
+  // { Monday: [ [9p data] ], Tuesday: [ [12a data], [3a data], [...], [], [], [], [], [] ], Wednesday: [ [], [], [], [], [], [], [], [] ], Thursday: [ [], [], [], [], [], [], [], [] ],
+  //   Friday: [ [], [], [], [], [], [], [], [...] ], Sat: [ [12a data], [3a data], [6a data], [9a data], [12p data], [3p data], [6p data] ] }
   groupByDays = (data) => {
       return (data.reduce((list, item) => {
           const forecastDate = item.dt_txt.substr(0,10);
