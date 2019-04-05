@@ -2,7 +2,7 @@
 
 UPDATE (March '19): I decided to refactor this project several months after working on it, mostly as an exercise in improving code maintainability. I disentangled some logic from the views, decided to manage the data without redux, broke the project down into smaller components, changed some function and variable names for clarity, and made a reusable SearchButton component.  
 
-I took what I learned from Maximilliam Schwarzmuller's React course on Udemy and applied my knowledge to a fun weather app.  It fetches weather data from an external API (OpenWeatherMap) and displays both current weather data and a five-day forecast, with searching capabilities.  It was a great way to get practice routing with React-Router, working with Redux, applying middleware for asynchronous actions with redux-thunk, and overall code design with stateful container components and stateless functional components.  
+(June '18) I took what I learned from Maximilliam Schwarzmuller's React course on Udemy and applied my knowledge to a fun weather app.  It fetches weather data from an external API (OpenWeatherMap) and displays both current weather data and a five-day forecast, with searching capabilities.  It was a great way to get practice routing with React-Router, working with Redux, applying middleware for asynchronous actions with redux-thunk, and overall code design with stateful container components and stateless functional components.  
 
 ![screen shot 2018-08-21 at 2 51 40 pm](https://user-images.githubusercontent.com/23299983/44425645-14394900-a552-11e8-8f2c-50949ec4c930.png)
 
